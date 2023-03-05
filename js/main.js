@@ -37,3 +37,60 @@
   });
 }
 
+// chatgpt
+
+var slideIndex = 1;
+var slides = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("dot");
+
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  slideIndex = n;
+  showSlides(slideIndex);
+}
+
+function showSlides(n) {
+  var i;
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active2");
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].classList.add("active2");
+}
+
+// 自動的にスライドを切り替える
+var timer = setInterval(function() { plusSlides(1); }, 5000);
+
+// 矢印ボタンが押されたら自動的にスライドを切り替えるタイマーをリセットする
+var buttons = document.querySelectorAll(".prev, .next");
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function() {
+    clearInterval(timer);
+    timer = setInterval(function() { plusSlides(1); }, 5000);
+  });
+}
+
+for (var i = 0; i < dots.length; i++) {
+  dots[i].addEventListener("click", function() {
+    clearInterval(timer);
+    timer = setInterval(function() { plusSlides(1); }, 5000);
+    var slideNumber = parseInt(this.getAttribute("data-slide"));
+    if (slideNumber != slideIndex) {
+      currentSlide(slideNumber);
+    }
+  });
+}

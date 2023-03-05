@@ -214,6 +214,7 @@
   margin: 0;
   display: flex;
 }
+/* -------- */
 
 /* header_contact */
 .contact {
@@ -230,94 +231,221 @@ body {
   background-color: rgba(255 255 255);
 }
 
-
-/* お問合せ */
 h1 {
   text-align: center;
-  font-size: 40px;
   padding-top: 120px;
-  color: #333
+  color: pink;
 }
 
 h2 {
   text-align: center;
+  margin: 24px auto;
+  color: pink;
+  font-size: 40px;
+}
+
+p {
+  padding: 24px 0;
+}
+
+.word1 {
   font-size: 20px;
-  color: #333  
+  text-align: center;
+  color: pink;
 }
 
-#g-contact {
-  margin: 64px;
+.word2 {
+  display: none;
+  /* font-size: 20px; */
+  /* text-align: center; */
+  /* color: pink; */
 }
 
-#g-contact h2 {
-  margin: 32px;
+@media (max-width:800px) {
+  .word1 {
+    display: none;
+  }
+
+  .word2 {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    color: pink;
+  }
+}
+/* -------- */
+
+/* 本日の名言 */
+.text1 {
+  margin: 40px;
+  padding-bottom: 16px;
+  border-bottom: 3px solid pink;
 }
 
-.c-form {
-	max-width: 600px;
-	margin: 0 auto;
-}
-.c-form__item {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	margin-bottom: 20px;
-}
-.c-form__label,
-.c-form__input {
-	padding: 10px;
-}
-.c-form__label {
-	width: 90%;
-}
-.c-form__input {
-	width: 90%;
-	font-size: 16px;
-	border: solid 1px #333;
-	border-radius: 4px;
-}
-.c-form__input:focus-visible {
-	outline: pink auto 1px;
-}
-.c-form__required {
-	color: #fff;
-	background-color: pink;
-	border-radius: 4px;
-	padding: 5px 5px;
-	margin: 0 0 0 18px;
-}
-textarea.c-form__input {
-	height: 160px;
-}
-.c-form__submit {
-	text-align: center;
-}
-.c-form__submit button {
-  margin: 16px;
-	font-size: 18px;
-	font-weight: bold;
-	color: #fff;
-	background-color: pink;
-	border: solid 1px pink;
-	border-radius: 4px;
-	padding: 5px 32px;
-	transition: 0.4s;
-	cursor: pointer;
-}
-.c-form__submit button:hover {
-	background-color: transparent;
+.text1 h2 {
+  font-size: 32px;
 }
 
-@media (min-width: 640px) {
-	.c-form__item {
-		flex-wrap: nowrap;
-	}
-	.c-form__label {
-		width: 40%;
-	}
-	.c-form__input {
-		width: 55%;
-	}
+.text1 .text1-1 {
+  display:block;
+  width: 100%;
+  height: 100%;
+}
+
+.text1 .text1-1 img {
+  display:block;
+  width: 100%;
+  height: 100%;
+}
+
+.text1 .text1-2 {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.text1 .text1-2 h2 {
+  text-align: center;
+}
+
+.text1 .text1-2 p {
+  padding: 16px;
+  font-size: 20px;
+}
+
+@media (min-width: 800px) {
+  .text1 {
+    display: flex;
+  }
+}
+
+.information {
+  margin: 40px auto;
+  padding: 16px 0 0 0;
+  width: 800px;  
+}
+
+.update1 {
+  background-color: rgba(255 235 200);
+  padding: 16px 16px 0 16px;
+  border-radius: 16px;
+  font-size: 20px;
+  color: pink;
+}
+
+.update1 + .update1 {
+  margin: 20px auto;
+}
+
+
+.update1in {
+  display: flex;
+}
+
+.update1in p {
+  font-size: 16px;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .information {
+    width: 400px;
+  }
+}
+
+/* chatgpt */
+
+.slideshow-container {
+  width: 1000px;
+  height: 800px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px;
+  color: white;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+/* .prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+} */
+
+.prev {
+  left: 8px;
+}
+
+.next {
+  right: 8px;
+}
+
+/* ドットナビゲーションのスタイル */
+.dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 2px;
+  background-color: gainsboro;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+
+/* 現在表示しているスライドのドットのスタイル */
+.active2 {
+  background-color: pink;
+}
+
+/* ドットナビゲーションを含む要素のスタイル */
+.dot-container {
+  text-align: center;
+}
+
+/* ドットナビゲーションがクリックされたときのスタイル */
+.dot:hover, .dot.active2:hover {
+  background-color: gray;
+}
+
+@media (max-width:800px) {
+  .slideshow-container {
+    width: 400px;
+    height: 300px;
+  }
 }
 /* -------- */
 
